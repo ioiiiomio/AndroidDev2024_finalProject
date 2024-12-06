@@ -29,4 +29,6 @@
     <string name="matching_sets">Matching Sets</string>
     <string name="dresses">Dresses</string>
     <string name="_99_us">99 US$</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
