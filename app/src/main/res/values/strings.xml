@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">android_finals</string>
+
+    <!-- Corrected as string-array -->
+    <string-array name="main_page_categories">
+        <item>New collection</item>
+        <item>Dresses</item>
+        <item>Best sellers</item>
+        <item>New arrivals</item>
+        <item>Matching sets</item>
+        <item>Jewellery</item>
+    </string-array>
+
+    <string-array name="catalog_categories">
+        <item>Women collection</item>
+        <item>Men collection</item>
+        <item>Jewellery</item>
+    </string-array>
+
+    <string-array name="men_categories">
+        <item>Shirts</item>
+    </string-array>
+
+    <!-- Individual strings -->
+    <string name="new_collection"><u>New Collection</u></string>
+    <string name="new_arrivals">New Arrivals</string>
+    <string name="best_sellers">Best Sellers</string>
+    <string name="jewellery">Jewellery</string>
+    <string name="matching_sets">Matching Sets</string>
+    <string name="dresses">Dresses</string>
+    <string name="_99_us">99 US$</string>
+</resources>
