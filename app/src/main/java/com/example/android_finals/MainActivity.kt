@@ -10,10 +10,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mainPageFragment = MainPageFragment.newInstance()
+        val catalogFragment = CatalogFragment.newInstance()
 
         supportFragmentManager
             .beginTransaction()
-            .add(R.id.fragment_container_view, mainPageFragment)
+            .add(R.id.fragment_container_view, catalogFragment)
             .commit()
     }
 }
