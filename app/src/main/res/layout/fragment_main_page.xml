@@ -12,18 +12,19 @@
     <!-- ListView for displaying the images and titles -->
     <ListView
         android:id="@+id/listView"
-        android:layout_width="391dp"
-        android:layout_height="708dp"
-        android:layout_margin="10dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+
         tools:listitem="@layout/list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<a target="_blank" href="https://icons8.com/icon/i6fZC6wuprSu/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
