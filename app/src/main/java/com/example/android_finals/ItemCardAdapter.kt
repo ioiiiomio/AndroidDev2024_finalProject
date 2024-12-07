@@ -12,7 +12,7 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Item) {
-            binding.detailImage.setImageResource(item.imageResource)
+//            binding.detailImage.setImageResource(item.imageResource)
             binding.detailName.text = item.title
         }
     }
