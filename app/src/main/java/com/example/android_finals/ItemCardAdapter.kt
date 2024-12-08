@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.android_finals.databinding.ItemCardBinding
 
 class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCallback()) {
@@ -12,8 +13,15 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Item) {
-//            binding.detailImage.setImageResource(item.imageResource)
-            binding.detailName.text = item.title
+            with(binding){
+                title.text = item.title
+                detailName.text = item.description
+                detailPrice.text = "$ ${item.price}"
+                Glide.with(itemView.context)
+                    .load(item.image)
+                    .into(detailImage)
+            }
+
         }
     }
 
