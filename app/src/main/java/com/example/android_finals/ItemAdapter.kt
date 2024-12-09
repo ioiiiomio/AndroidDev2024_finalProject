@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class ItemAdapter(private val context: Context, private val items: List<Item>) : BaseAdapter() {
+class ItemAdapter(private val context: Context, private val items: List<MainPageItem>) : BaseAdapter() {
 
     override fun getCount(): Int = items.size
 
@@ -19,7 +19,7 @@ class ItemAdapter(private val context: Context, private val items: List<Item>) :
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
 
-        val item = getItem(position) as Item
+        val item = getItem(position) as MainPageItem
         val imageView: ImageView = view.findViewById(R.id.item_image)
         val textView: TextView = view.findViewById(R.id.item_title)
 
