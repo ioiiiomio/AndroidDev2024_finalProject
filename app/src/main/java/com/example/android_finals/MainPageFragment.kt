@@ -18,11 +18,11 @@ class MainPageFragment : Fragment() {
 
     // Sample data for the ListView
     private val items = listOf(
-        Item(R.drawable.new_collection, "New Collection"),
-        Item(R.drawable.best_sellers, "Best Sellers"),
-        Item(R.drawable.new_arrivals, "New Arrivals"),
-        Item(R.drawable.jewellery, "Jewellery"),
-        Item(R.drawable.matching_sets, "Matching Sets")
+        MainPageItem(R.drawable.new_collection, "New Collection"),
+        MainPageItem(R.drawable.best_sellers, "Best Sellers"),
+        MainPageItem(R.drawable.new_arrivals, "New Arrivals"),
+        MainPageItem(R.drawable.jewellery, "Jewellery"),
+        MainPageItem(R.drawable.matching_sets, "Matching Sets")
     )
 
     override fun onCreateView(

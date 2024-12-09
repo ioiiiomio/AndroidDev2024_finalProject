@@ -1,5 +1,16 @@
 package com.example.android_finals
 
-data class Item(val imageResource: Int, val title: String)
+data class Item(
+    val id: Int,
+    val title: String,
+    val price: Double,
+    val description: String,
+    val category: String,
+    val image: String,
+    val rating: Rating
+)
 
-//Это чтобы показывать каждый объект в list_item
+data class Rating(
+    val rate: Double,
+    val count: Int
+)

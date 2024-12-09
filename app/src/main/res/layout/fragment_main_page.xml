@@ -26,5 +26,3 @@
         tools:listitem="@layout/list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--<a target="_blank" href="https://icons8.com/icon/i6fZC6wuprSu/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
