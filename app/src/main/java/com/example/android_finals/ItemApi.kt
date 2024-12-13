@@ -8,3 +8,4 @@ interface ItemApi {
     @GET("products")
     fun fetchAllItems(): Call<List<Item>>
 }
+

@@ -28,4 +28,14 @@
     <string name="matching_sets">Matching Sets</string>
     <string name="dresses">Dresses</string>
     <string name="_99_us">99 US$</string>
+
+<!--    For Navigation-->
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
+    <string name="favorites">Favorites</string>
+    <string name="catalogue">Catalogue</string>
+    <string name="home">Home</string>
+    <string name="women_s_clothing">Women\'s clothing</string>
+    <string name="men_s_clothing">Men\'s clothing</string>
+    <string name="jewelery">Jewelery</string>
 </resources>
