@@ -14,12 +14,14 @@ Our project is called "Fashionista". It is an online shopping app with connected
 - Home Page
 - Profile (Not Finished yet)
 - Shopping Cart (Not Finished yet)
+
+
   
 ## API endpoints: https://fakestoreapi.com/category/
     -> /Jeweleries
     -> /Men's Clothes
     -> /Women's Clothes
-[    img](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/API.png)
+![API Endpoints](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/API.png)
     
 
 ## Plans for future updates:
