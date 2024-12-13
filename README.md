@@ -4,7 +4,7 @@ It is Koshkimbayeva Zhaniya's &amp; Zhaidary Arukhanym's Android 2024 Fall cours
 #Lab_3 description:
 
 # Updates log: 
-###13 Dec 2204
+### 13 Dec 2204
 1) Created Fragments, Activities, Adapters directories
 2) Renamed MainPageFragment.kt -> HomePage.kt
 3) Added Catalogue, FavoriteItems, Profile, ShoppingCart Fragments
