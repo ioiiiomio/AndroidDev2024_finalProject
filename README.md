@@ -1,5 +1,5 @@
 # AndroidDev2024_finalProject
-[img](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/logo.png)
+![Logo](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/logo.png)
 
 It is Koshkimbayeva Zhaniya's &amp; Zhaidary Arukhanym's Android 2024 Fall course project
 
@@ -32,10 +32,12 @@ Our project is called "Fashionista". It is an online shopping app with connected
 - feature of "Filtering" items
 - AI (Maybe)
 
+![App showcase](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/app.png)
+
 ## References
 We referenced app such as: GoldApple, ZARA, Lichi
 
-[img](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/References.png)
+![App References](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/References.png)
 
 ## Updates log: 
 
