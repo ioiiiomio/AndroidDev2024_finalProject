@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/catalogueFragment"
+        android:icon="@drawable/gravity_ui_catalogue"
+        android:title="@string/catalogue" />
+    <item
+        android:id="@+id/favoriteItemsFragment"
+        android:icon="@drawable/gravity_ui__heart"
+        android:title="@string/favorites" />
+    <item
+        android:id="@+id/homePageFragment"
+        android:icon="@drawable/gravity_ui_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/gravity_ui_person"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/shoppingCartFragment"
+        android:icon="@drawable/gravity_ui_shopping_bag"
+        android:title="@string/cart" />
+</menu>

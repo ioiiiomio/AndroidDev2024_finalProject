@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CatalogFragment">
+    tools:context=".activities.com.example.android_finals.CatalogueFragment">
 
     <TextView
         android:id="@+id/womens_clothing"
@@ -15,10 +15,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/oranienbaum_regular"
         android:textStyle="bold"
-        android:text="Women's clothing"
-        android:textSize="20dp"
-        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-        />
+        android:text="@string/women_s_clothing"
+        android:textSize="20sp"
+        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
     <TextView
         android:id="@+id/mens_clothing"
@@ -28,9 +27,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/oranienbaum_regular"
         android:textStyle="bold"
-        android:text="Men's clothing"
-        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-        android:textSize="20dp" />
+        android:text="@string/men_s_clothing"
+        android:textSize="20sp"
+        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
     <TextView
         android:id="@+id/jewelery"
@@ -40,10 +39,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/oranienbaum_regular"
         android:textStyle="bold"
-        android:text="Jewelery"
-        android:textSize="20dp"
-        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
-        />
+        android:text="@string/jewelery"
+        android:textSize="20sp"
+        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

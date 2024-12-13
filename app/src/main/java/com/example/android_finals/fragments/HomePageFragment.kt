@@ -1,19 +1,22 @@
-package com.example.android_finals
+package com.example.android_finals.activities.com.example.android_finals.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.android_finals.ItemAdapter
+import com.example.android_finals.MainPageItem
+import com.example.android_finals.R
 import com.example.android_finals.databinding.FragmentMainPageBinding
 
-class MainPageFragment : Fragment() {
+class HomePageFragment : Fragment() {
 
     private var _binding: FragmentMainPageBinding? = null
     private val binding: FragmentMainPageBinding get() = _binding!!
 
     companion object {
-        fun newInstance() = MainPageFragment()
+        fun newInstance() = HomePageFragment()
     }
 
     // Sample data for the ListView
