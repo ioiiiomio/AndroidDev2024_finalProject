@@ -1,10 +1,44 @@
 # AndroidDev2024_finalProject
+img
 It is Koshkimbayeva Zhaniya's &amp; Zhaidary Arukhanym's Android 2024 Fall course project
 
-#Lab_3 description:
+# Project Description
+Our project is called "Fashionista". It is an online shopping app with connected API, registration, favorites and checkout. 
 
-# Updates log: 
-### 13 Dec 2204
+# Lab_3 description:
+## Main activities: MainActivity.kt
+## Fragments: 
+- Catalog
+- Favorite Items (Not Finished yet)
+- Home Page
+- Profile (Not Finished yet)
+- Shopping Cart (Not Finished yet)
+  
+## API endpoints: https://fakestoreapi.com/category/
+    -> /Jeweleries
+    -> /Men's Clothes
+    -> /Women's Clothes
+    img
+    
+
+## Plans for future updates:
+- Add feature of "Favourites"
+- Add feature of "Cart"
+- feature of "Checkout"
+- feature of "Registration"
+- feature of "Filtering" items
+- AI (Maybe)
+
+## References
+We referenced app such as: GoldApple, ZARA, Lichi
+img
+
+## Updates log: 
+
+### 
+Yet to be updated
+
+### 13 Dec 2024
 1) Created Fragments, Activities, Adapters directories
 2) Renamed MainPageFragment.kt -> HomePage.kt
 3) Added Catalogue, FavoriteItems, Profile, ShoppingCart Fragments
