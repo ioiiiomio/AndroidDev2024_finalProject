@@ -1,12 +1,12 @@
-package com.example.android_finals.activities.com.example.android_finals.fragments
+package com.example.android_finals.activities.com.example.android_finals.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.android_finals.ItemAdapter
-import com.example.android_finals.MainPageItem
+import com.example.android_finals.view.adapter.ItemAdapter
+import com.example.android_finals.model.entity.MainPageItem
 import com.example.android_finals.R
 import com.example.android_finals.databinding.FragmentMainPageBinding
 

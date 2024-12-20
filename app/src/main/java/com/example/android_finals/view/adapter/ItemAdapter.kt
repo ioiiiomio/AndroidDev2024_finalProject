@@ -1,4 +1,4 @@
-package com.example.android_finals
+package com.example.android_finals.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.android_finals.R
+import com.example.android_finals.model.entity.MainPageItem
 
 class ItemAdapter(private val context: Context, private val items: List<MainPageItem>) : BaseAdapter() {
 

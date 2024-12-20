@@ -1,4 +1,4 @@
-package com.example.android_finals.activities.com.example.android_finals.fragments
+package com.example.android_finals.activities.com.example.android_finals.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.android_finals.ApiSource
-import com.example.android_finals.Item
-import com.example.android_finals.ItemCardAdapter
+import androidx.core.view.isVisible
+import com.example.android_finals.view.adapter.ItemCardAdapter
 import com.example.android_finals.databinding.FragmentCatalogBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.android_finals.viewModel.ItemListUI
+import com.example.android_finals.viewModel.ItemViewModel
+import com.example.android_finals.viewModel.ItemViewModelFactory
+
 
 class CatalogueFragment : Fragment() {
 
@@ -24,7 +24,9 @@ class CatalogueFragment : Fragment() {
     private val binding: FragmentCatalogBinding get() = _binding!!
 
     private var adapter: ItemCardAdapter? = null
-    private var items: List<Item>? = null
+    private val viewModel: ItemViewModel by lazy {
+        ItemViewModelFactory().create(ItemViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +41,7 @@ class CatalogueFragment : Fragment() {
         adapter = ItemCardAdapter()
         binding.recyclerView.adapter = adapter
 
-        fetchItems()
+        viewModel.fetchItems()
 
         binding.womensClothing.setOnClickListener {
             adapter?.filterItems("women's clothing")
@@ -50,28 +52,21 @@ class CatalogueFragment : Fragment() {
         binding.jewelery.setOnClickListener {
             adapter?.filterItems("jewelery")
         }
+
+        configureObserver()
     }
 
-    private fun fetchItems() {
-        ApiSource.client.fetchAllItems().enqueue(object : Callback<List<Item>> {
-            override fun onResponse(p0: Call<List<Item>>, p1: Response<List<Item>>) {
-                if (p1.isSuccessful) {
-                    val fetchedItems = p1.body()
-                    if (!fetchedItems.isNullOrEmpty()) {
-                        items = fetchedItems
-                        adapter?.updateList(fetchedItems)
-                    } else {
-                        Toast.makeText(context, "No items", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    Toast.makeText(context, "Response isn't successful", Toast.LENGTH_SHORT).show()
-                }
-            }
 
-            override fun onFailure(p0: Call<List<Item>>, p1: Throwable) {
-                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+    private fun configureObserver(){
+        viewModel.itemsListUI.observe(viewLifecycleOwner){ state->
+            when(state){
+                is ItemListUI.Success -> adapter?.updateList(state.items)
+                is ItemListUI.Error -> Toast.makeText(requireContext(), "Error ! ${state.message}", Toast.LENGTH_LONG).show()
+                is ItemListUI.Loading -> binding.progressBar.isVisible = state.isLoading
+                is ItemListUI.Empty -> Toast.makeText(requireContext(), "No data", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
     }
+
 
 }
