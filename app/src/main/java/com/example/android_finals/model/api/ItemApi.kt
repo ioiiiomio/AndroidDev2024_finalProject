@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface ItemApi {
 
     @GET("products")
-    fun fetchAllItems(): Call<List<Item>>
+    suspend fun fetchAllItems(): List<Item>
 }
 
