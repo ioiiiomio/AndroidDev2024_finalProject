@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.com.example.android_finals.CatalogueFragment">
+    tools:context="com.example.android_finals.activities.com.example.android_finals.view.fragments.CatalogueFragment">
 
     <TextView
         android:id="@+id/womens_clothing"
