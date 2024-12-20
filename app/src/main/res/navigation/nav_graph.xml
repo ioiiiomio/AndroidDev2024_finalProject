@@ -9,35 +9,35 @@
     <!--suppress NavigationFile -->
     <fragment
         android:id="@+id/homePageFragment"
-        android:name="com.example.android_finals.activities.com.example.android_finals.fragments.HomePageFragment"
+        android:name="com.example.android_finals.activities.com.example.android_finals.view.fragments.HomePageFragment"
         android:label="Home"
         tools:layout="@layout/fragment_main_page" />
 
     <!-- Catalogue Fragment -->
     <fragment
         android:id="@+id/catalogueFragment"
-        android:name="com.example.android_finals.activities.com.example.android_finals.fragments.CatalogueFragment"
+        android:name="com.example.android_finals.activities.com.example.android_finals.view.fragments.CatalogueFragment"
         android:label="Catalogue"
         tools:layout="@layout/fragment_catalog" />
 
     <!-- Favorite Fragment -->
     <fragment
         android:id="@+id/favoriteItemsFragment"
-        android:name="com.example.android_finals.activities.com.example.android_finals.fragments.FavoriteItemsFragment"
+        android:name="com.example.android_finals.activities.com.example.android_finals.view.fragments.FavoriteItemsFragment"
         android:label="Favorites"
         tools:layout="@layout/fragment_favorite_items" />
 
     <!-- Profile Fragment -->
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.android_finals.activities.com.example.android_finals.fragments.ProfileFragment"
+        android:name="com.example.android_finals.activities.com.example.android_finals.view.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
     <!-- Shopping Cart Fragment -->
     <fragment
         android:id="@+id/shoppingCartFragment"
-        android:name="com.example.android_finals.activities.com.example.android_finals.fragments.ShoppingCartFragment"
+        android:name="com.example.android_finals.activities.com.example.android_finals.view.fragments.ShoppingCartFragment"
         android:label="Shopping Cart"
         tools:layout="@layout/fragment_shopping_cart" />
 

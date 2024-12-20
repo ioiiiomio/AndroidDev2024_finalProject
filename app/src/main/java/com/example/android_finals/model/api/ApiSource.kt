@@ -1,4 +1,4 @@
-package com.example.android_finals
+package com.example.android_finals.model.api
 
 import com.google.gson.Gson
 import retrofit2.Retrofit
