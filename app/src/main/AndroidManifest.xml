@@ -21,7 +21,7 @@
 
         <!-- Correct the declaration here -->
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.com.example.android_finals.view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

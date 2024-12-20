@@ -1,4 +1,4 @@
-package com.example.android_finals.activities.com.example.android_finals.fragments
+package com.example.android_finals.activities.com.example.android_finals.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.android_finals.ApiSource
-import com.example.android_finals.Item
-import com.example.android_finals.ItemCardAdapter
+import com.example.android_finals.model.api.ApiSource
+import com.example.android_finals.model.entity.Item
+import com.example.android_finals.view.adapter.ItemCardAdapter
 import com.example.android_finals.databinding.FragmentCatalogBinding
 import retrofit2.Call
 import retrofit2.Callback

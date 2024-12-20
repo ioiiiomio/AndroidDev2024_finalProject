@@ -1,4 +1,4 @@
-package com.example.android_finals.activities
+package com.example.android_finals.activities.com.example.android_finals.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
