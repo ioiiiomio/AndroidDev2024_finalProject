@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ItemApi {
 
-    @GET("products")
+    @GET("karukaaa/fashionistaApi/items")
     suspend fun fetchAllItems(): List<Item>
 }
 
