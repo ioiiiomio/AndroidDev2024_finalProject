@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android_finals.databinding.ItemCardBinding
 import com.example.android_finals.model.entity.Item
+import retrofit2.Call
 
 class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCallback()) {
 
@@ -37,7 +38,7 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
         holder.bind(getItem(position))
     }
 
-//сохраняем исходный список в переменной чтобы при выборе категорий фильтровать этот исходный список
+    //сохраняем исходный список в переменной чтобы при выборе категорий фильтровать этот исходный список
     fun updateList(items: List<Item>) {
         originalList = items
         submitList(emptyList())
