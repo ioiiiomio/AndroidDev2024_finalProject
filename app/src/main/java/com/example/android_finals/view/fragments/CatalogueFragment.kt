@@ -1,6 +1,8 @@
 package com.example.android_finals.activities.com.example.android_finals.view.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,19 +45,49 @@ class CatalogueFragment : Fragment() {
 
         viewModel.fetchItems()
 
-        binding.womensClothing.setOnClickListener {
-            adapter?.filterItems("women's clothing")
-        }
-        binding.mensClothing.setOnClickListener {
-            adapter?.filterItems("men's clothing")
-        }
-        binding.jewelery.setOnClickListener {
-            adapter?.filterItems("jewelery")
-        }
+        binding.womensClothing.setOnClickListener { showFilteredItems("women's clothing") }
+        binding.mensClothing.setOnClickListener { showFilteredItems("men's clothing") }
+        binding.jewelery.setOnClickListener { showFilteredItems("jewelery") }
+
+        binding.searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val searchText = s.toString()
+
+                if (s.isNullOrEmpty()){
+                    showCategories()
+                    return
+                }
+                binding.categoriesLayout.visibility = View.GONE
+                binding.backButton.visibility = View.VISIBLE
+                binding.recyclerView.isVisible=true
+                adapter?.filterItemsBySearch(searchText)
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
 
         configureObserver()
+
+        binding.backButton.setOnClickListener { showCategories() }
+
     }
 
+    private fun showFilteredItems(category: String) {
+        binding.categoriesLayout.visibility = View.GONE
+        binding.backButton.visibility = View.VISIBLE
+        adapter?.filterItems(category)
+        binding.recyclerView.isVisible=true
+    }
+
+    private fun showCategories() {
+        binding.categoriesLayout.visibility = View.VISIBLE
+        binding.backButton.visibility = View.GONE
+//        adapter?.submitList(emptyList())
+        binding.recyclerView.isVisible=false
+    }
 
     private fun configureObserver(){
         viewModel.itemsListUI.observe(viewLifecycleOwner){ state->

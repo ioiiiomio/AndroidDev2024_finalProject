@@ -49,4 +49,17 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
         val filteredList = originalList.filter { it.category.equals(category, ignoreCase = true) }
         submitList(filteredList)
     }
+
+    fun filterItemsBySearch(query: String) {
+        if (query.isEmpty()) {
+            submitList(emptyList())
+        } else {
+            val filteredList = originalList.filter {
+                it.title.contains(query, ignoreCase = true) ||
+                        it.description.contains(query, ignoreCase = true)
+            }
+            submitList(filteredList)
+        }
+    }
+
 }
