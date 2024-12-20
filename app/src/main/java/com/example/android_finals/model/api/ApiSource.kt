@@ -17,7 +17,7 @@ object ApiSource {
         .build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://fakestoreapi.com/")
+        .baseUrl("https://my-json-server.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
