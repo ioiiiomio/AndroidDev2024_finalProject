@@ -1,62 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.android_finals.activities.com.example.android_finals.view.fragments.CatalogueFragment">
 
-    <TextView
-        android:id="@+id/womens_clothing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/oranienbaum_regular"
-        android:textStyle="bold"
-        android:text="@string/women_s_clothing"
-        android:textSize="20sp"
-        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
-    <TextView
-        android:id="@+id/mens_clothing"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/oranienbaum_regular"
-        android:textStyle="bold"
-        android:text="@string/men_s_clothing"
-        android:textSize="20sp"
-        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="12dp">
 
-    <TextView
-        android:id="@+id/jewelery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/oranienbaum_regular"
-        android:textStyle="bold"
-        android:text="@string/jewelery"
-        android:textSize="20sp"
-        app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:contentDescription="Back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:visibility="gone"
+            android:layout_marginHorizontal="12dp"/>
 
-    <ProgressBar
-        android:id="@+id/progress_Bar"
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:hint="Search items..."
+            android:inputType="text" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/categoriesLayout"
         android:layout_width="match_parent"
-        android:layout_marginTop="60dp"
         android:layout_height="wrap_content"
-        android:visibility="gone" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/womens_clothing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="@string/women_s_clothing"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+
+        <TextView
+            android:id="@+id/mens_clothing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="@string/men_s_clothing"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+
+        <TextView
+            android:id="@+id/jewelery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="@string/jewelery"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
+
+        <TextView
+            android:id="@+id/gift_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="Gift cards"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24"
+            app:drawableStartCompat="@drawable/gift_card_icon" />
+
+        <TextView
+            android:id="@+id/discounts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="Discounts"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24"
+            app:drawableStartCompat="@drawable/discount_icon" />
+
+        <TextView
+            android:id="@+id/gift_ideas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/oranienbaum_regular"
+            android:text="Gift ideas"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="8dp"
+            app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24"
+            app:drawableStartCompat="@drawable/idea_icon" />
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="36dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <ProgressBar
+        android:id="@+id/progress_Bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginBottom="40dp"/>
-
-
+        android:layout_marginTop="60dp"
+        android:visibility="gone" />
 
 </LinearLayout>
