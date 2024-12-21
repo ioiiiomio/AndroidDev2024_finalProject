@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.android_finals.R
 import com.example.android_finals.databinding.FragmentProfileBinding
 import com.example.android_finals.model.api.ApiSourceUser
@@ -60,23 +62,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             }
         }
 
-        binding.logOut.setOnClickListener {
-            userData.setAuthorizationState(false)
-            showRegistrationLayout()
-        }
-
-
     }
-
-    private suspend fun isUsernameTaken(username: String): Boolean {
-        return try {
-            val response = ApiSourceUser.api.fetchUsers()
-            response.isSuccessful && response.body()?.any { it.username == username } == true
-        } catch (e: Exception) {
-            false
-        }
-    }
-
 
     private suspend fun handleRegistrationOrLogin(username: String, password: String, userData: UserData) {
         try {

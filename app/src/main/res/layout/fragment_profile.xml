@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/profile_layout"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
@@ -13,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="match_parent"
@@ -62,7 +63,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:visibility="gone">
+    android:visibility="visible">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -159,6 +160,7 @@
         app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
     <TextView
+        android:id="@+id/favorites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
@@ -170,6 +172,7 @@
         app:drawableEndCompat="@drawable/baseline_keyboard_arrow_right_24" />
 
     <TextView
+        android:id="@+id/cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
