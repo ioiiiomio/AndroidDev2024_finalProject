@@ -1,5 +1,5 @@
 # AndroidDev2024_finalProject
-![Logo_bg][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/logo_bg.png]
+[!Logo_bg](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/logo_bg.png)
 
 It is Koshkimbayeva Zhaniya's &amp; Zhaidary Arukhanym's Android 2024 Fall course project
 
@@ -12,7 +12,7 @@ Our project is called "Fashionista". It is an online shopping app with connected
 This runs the handleRegistrationOrLogin function
   - **handleRegistrationOrLogin**: withContext(Dispatchers.Main) is used to switch to the Main thread for UI-related operations like showing toast messages or updating the UI
   - **isUsernameTaken and fetchUsers methods**
-![Coroutines][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/coroutine.png]
+[!Coroutines](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/coroutine.png)
 
 - Room for CartFragment
 
@@ -26,7 +26,7 @@ New API:
 We referenced app such as: GoldApple, ZARA, Lichi
 
 **Canva board link:** https://www.canva.com/design/DAGYUnoLAHc/mcc1txq_x2ovOfjgioPyrg/edit?utm_content=DAGYUnoLAHc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-![References][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/ref_new.png]
+[!References](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/ref_new.png)
 
 
 # Lab_3 description:
@@ -43,7 +43,7 @@ We referenced app such as: GoldApple, ZARA, Lichi
     -> /Jeweleries
     -> /Men's Clothes
     -> /Women's Clothes
-![API Endpoints](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/API.png)
+[!API Endpoints](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/API.png)
     
 
 ## Plans for future updates:
@@ -54,8 +54,6 @@ We referenced app such as: GoldApple, ZARA, Lichi
 - feature of "Filtering" items(NOT DONE)
 - AI (Maybe)
 
-![App showcase](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/app.png)
+[!App showcase](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/app.png)
 
-## References
-We referenced app such as: GoldApple, ZARA, Lichi
-![App References](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/References.png)
+
