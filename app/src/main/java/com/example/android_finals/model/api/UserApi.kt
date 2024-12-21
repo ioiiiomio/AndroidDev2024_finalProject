@@ -23,5 +23,4 @@ interface ApiService {
     @GET("users") // Endpoint to fetch all users
     suspend fun fetchUsers(): Response<List<User>>
 
-
 }
