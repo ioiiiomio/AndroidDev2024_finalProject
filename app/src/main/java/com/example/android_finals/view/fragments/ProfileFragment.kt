@@ -68,14 +68,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     }
 
-    private suspend fun isUsernameTaken(username: String): Boolean {
-        return try {
-            val response = ApiSourceUser.api.fetchUsers()
-            response.isSuccessful && response.body()?.any { it.username == username } == true
-        } catch (e: Exception) {
-            false
-        }
-    }
 
 
     private suspend fun handleRegistrationOrLogin(username: String, password: String, userData: UserData) {
