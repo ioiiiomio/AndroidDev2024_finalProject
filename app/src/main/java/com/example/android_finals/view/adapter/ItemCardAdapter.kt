@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android_finals.databinding.ItemCardBinding
 import com.example.android_finals.model.entity.Item
+import com.example.android_finals.viewModel.ItemViewModel
 import retrofit2.Call
 
 class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCallback()) {
 
     private var originalList: List<Item> = emptyList()
+    private lateinit var itemViewModel: ItemViewModel // Reference to your ViewModel
+
 
     inner class ViewHolder(private val binding: ItemCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -24,8 +27,11 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
                 Glide.with(itemView.context)
                     .load(item.image)
                     .into(detailImage)
+
+
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
