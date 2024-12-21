@@ -12,6 +12,7 @@ import com.example.android_finals.R
 import com.example.android_finals.databinding.FragmentProfileBinding
 import com.example.android_finals.model.api.ApiSourceUser
 import com.example.android_finals.model.api.RegisterRequest
+import com.example.android_finals.model.entity.User
 import com.example.android_finals.view.util.UserData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,68 +41,109 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         val userData = UserData(requireContext())
 
-        // Check the current authorization state
-//        updateUI(userData)
+        if (userData.isAuthorized()) {
+            showProfileLayout(userData)
+        } else {
+            showRegistrationLayout()
+        }
 
-        // Set a click listener on the actionButton to toggle the authorization state
-//        binding.registerButton.setOnClickListener {
-//            val newAuthorizationState = !userData.isAuthorized()
-//            userData.setAuthorizationState(newAuthorizationState)
-//            updateUI(userData)
-//        }
-
-        binding.registerButton.setOnClickListener {
+        binding.logIn.setOnClickListener {
             val name = binding.nameEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
 
-            if (name.isNotBlank() && password.isNotBlank()) {
-                registerUser(name, password)
+            if (name.isNotEmpty() && password.isNotEmpty()) {
+                lifecycleScope.launch {
+                    handleRegistrationOrLogin(name, password, userData)
+                }
             } else {
-                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
+        binding.logOut.setOnClickListener {
+            userData.setAuthorizationState(false)
+            showRegistrationLayout()
+        }
+
+
     }
 
-    // Update UI based on the current authorization state
-//    private fun updateUI(userData: UserData) {
-//        with(binding) {
-//            if (userData.isAuthorized()) {
-//                welcomeText.isVisible = true
-//            } else {
-//                welcomeText.isVisible = false
-//            }
-//        }
-//    }
+    private suspend fun isUsernameTaken(username: String): Boolean {
+        return try {
+            val response = ApiSourceUser.api.fetchUsers()
+            response.isSuccessful && response.body()?.any { it.username == username } == true
+        } catch (e: Exception) {
+            false
+        }
+    }
 
 
-    private fun registerUser(name: String, password: String) {
-        lifecycleScope.launch {
-            try {
-                val response = ApiSourceUser.api.registerUser(
-                    RegisterRequest(name, password)
-                )
-                if (response.isSuccessful) {
+    private suspend fun handleRegistrationOrLogin(username: String, password: String, userData: UserData) {
+        try {
+            val users = fetchUsers() // Fetch all users from the API
+            val existingUser = users?.find { it.username == username }
+
+            if (existingUser != null) {
+                // User exists, validate the password
+                if (existingUser.password == password) {
+                    // Successful login
+                    userData.setAuthorizationState(true)
+                    userData.setUsername(username)
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            requireContext(),
-                            "Registration successful: ${response.body()?.username}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(requireContext(), "Login successful!", Toast.LENGTH_SHORT).show()
+                        showProfileLayout(userData)
                     }
                 } else {
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(requireContext(), "Registration failed", Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(requireContext(), "Incorrect password!", Toast.LENGTH_SHORT).show()
                     }
                 }
-            } catch (e: Exception) {
+            } else {
+                // New user, register them
+                val response = ApiSourceUser.api.registerUser(RegisterRequest(username, password))
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT)
-                        .show()
+                    if (response.isSuccessful) {
+                        userData.setAuthorizationState(true)
+                        userData.setUsername(username)
+                        Toast.makeText(requireContext(), "Registration successful!", Toast.LENGTH_SHORT).show()
+                        showProfileLayout(userData = userData)
+                    } else {
+                        Toast.makeText(requireContext(), "Registration failed!", Toast.LENGTH_SHORT).show()
+                    }
                 }
+            }
+        } catch (e: Exception) {
+            withContext(Dispatchers.Main) {
+                Toast.makeText(requireContext(), "An error occurred: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
+    private suspend fun fetchUsers(): List<User>? {
+        return try {
+            val response = ApiSourceUser.api.fetchUsers()
+            if (response.isSuccessful) {
+                response.body()
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+
+    private fun showRegistrationLayout() {
+        binding.registerForm.isVisible = true
+        binding.profile.isVisible = false
+    }
+
+    private fun showProfileLayout(userData: UserData) {
+        binding.registerForm.isVisible = false
+        binding.profile.isVisible = true
+
+        binding.username.text = userData.getUsername()
+        userData.setAuthorizationState(true)
+    }
+
 }
