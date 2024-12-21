@@ -1,10 +1,33 @@
 # AndroidDev2024_finalProject
-![Logo](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/logo.png)
+![Logo_bg][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/logo_bg.png]
 
 It is Koshkimbayeva Zhaniya's &amp; Zhaidary Arukhanym's Android 2024 Fall course project
 
 # Project Description
 Our project is called "Fashionista". It is an online shopping app with connected API, registration, favorites and checkout. 
+
+# Final Description: 
+- Coroutines in ProfileFragment:
+  - **logIn.setOnClickListener:** When the login button is clicked, a coroutine is launched using lifecycleScope.launch.
+This runs the handleRegistrationOrLogin function
+  - **handleRegistrationOrLogin**: withContext(Dispatchers.Main) is used to switch to the Main thread for UI-related operations like showing toast messages or updating the UI
+  - **isUsernameTaken and fetchUsers methods**
+![Coroutines][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/coroutine.png]
+
+- Room for CartFragment
+
+New API:
+**For User handling:**
+- https://6765aea9410f84999655dfac.mockapi.io/users
+**Custom API for items**:
+- https://my-json-server.typicode.com/karukaaa/fashionistaApi/items
+
+## References
+We referenced app such as: GoldApple, ZARA, Lichi
+
+**Canva board link:** https://www.canva.com/design/DAGYUnoLAHc/mcc1txq_x2ovOfjgioPyrg/edit?utm_content=DAGYUnoLAHc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+![References][https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/main/READMEimg/ref_new.png]
+
 
 # Lab_3 description:
 ## Main activities: MainActivity.kt
@@ -15,8 +38,7 @@ Our project is called "Fashionista". It is an online shopping app with connected
 - Profile (Not Finished yet)
 - Shopping Cart (Not Finished yet)
 
-
-  
+**(UPDATED)**
 ## API endpoints: https://fakestoreapi.com/category/
     -> /Jeweleries
     -> /Men's Clothes
@@ -25,33 +47,15 @@ Our project is called "Fashionista". It is an online shopping app with connected
     
 
 ## Plans for future updates:
-- Add feature of "Favourites"
-- Add feature of "Cart"
-- feature of "Checkout"
-- feature of "Registration"
-- feature of "Filtering" items
+- Add feature of "Favourites"(DONE)
+- Add feature of "Cart"(DONE)
+- feature of "Checkout"(NOT DONE)
+- feature of "Registration"(DONE)
+- feature of "Filtering" items(NOT DONE)
 - AI (Maybe)
 
 ![App showcase](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/app.png)
 
 ## References
 We referenced app such as: GoldApple, ZARA, Lichi
-
 ![App References](https://github.com/ioiiiomio/AndroidDev2024_finalProject/blob/Zhaniya/READMEimg/References.png)
-
-## Updates log: 
-
-### 
-Yet to be updated
-
-### 13 Dec 2024
-1) Created Fragments, Activities, Adapters directories
-2) Renamed MainPageFragment.kt -> HomePage.kt
-3) Added Catalogue, FavoriteItems, Profile, ShoppingCart Fragments
-4) Put  Catalogue, FavoriteItems, Profile, ShoppingCart, HomePage Fragments to Fragments directory
-5) Added fragment_catalog, fragment_favorite_items, fragment_main_page, fragment_profile, fragment_shopping_cart.xml files to "Layout" directory
-6) Created Menu, Navigation directories in Res
-7) Created nav_graph.xml file. It is part of the Navigation Component in Android, which is a framework that simplifies in-app navigation by managing the transitions between destinations.
-8) Added bottom_nav_menu.xml in Menu to Navigation to to define the individual items displayed in the bottom navigation bar. Each item in the menu corresponds to a fragment or screen in the app
-9) Updated MainActivity.kt: Added NavController atributes
-10) Updated activity_main.xml: added BottomNavigationView for navigation bar
