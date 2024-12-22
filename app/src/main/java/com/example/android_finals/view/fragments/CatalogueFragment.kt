@@ -40,7 +40,11 @@ class CatalogueFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = ItemCardAdapter()
+        adapter = ItemCardAdapter(
+            onClick = {
+                viewModel.changeFavouriteState(it, true)
+            }
+        )
         binding.recyclerView.adapter = adapter
 
         viewModel.fetchItems()

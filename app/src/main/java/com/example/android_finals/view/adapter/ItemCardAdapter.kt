@@ -10,7 +10,9 @@ import com.example.android_finals.model.entity.Item
 import com.example.android_finals.viewModel.ItemViewModel
 import retrofit2.Call
 
-class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCallback()) {
+class ItemCardAdapter(
+    private val onClick: (Item) -> Unit
+) : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCallback()) {
 
     private var originalList: List<Item> = emptyList()
     private lateinit var itemViewModel: ItemViewModel // Reference to your ViewModel
@@ -28,7 +30,9 @@ class ItemCardAdapter : ListAdapter<Item, ItemCardAdapter.ViewHolder>(ItemCardCa
                     .load(item.image)
                     .into(detailImage)
 
-
+                addToFavoritesButton.setOnClickListener {
+                    onClick(item)
+                }
             }
         }
 
